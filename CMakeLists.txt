@@ -127,6 +127,9 @@ if(WIN32 AND SDL3TTF_BUILD_SHARED_LIBS)
         src/version.rc
     )
 endif()
+if (MOLLENOS)
+    target_sources(${sdl3_ttf_target_name} PRIVATE vali_main.c)
+endif ()
 set_target_properties(${sdl3_ttf_target_name} PROPERTIES
     OUTPUT_NAME SDL3_ttf
     DEFINE_SYMBOL DLL_EXPORT
